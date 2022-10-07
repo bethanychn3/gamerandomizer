@@ -1,6 +1,5 @@
 from tkinter import *
 from random import randint
-from shhh import secret_message
 
 
 class startup():
@@ -213,6 +212,6 @@ if __name__ == '__main__':
   if selection == 3:
       customizedWindow = customized()
     
-  secret_message()
+
 
 # To get a random integer from x to y -> randint(x, y)   *note* x and y will be included in the range
