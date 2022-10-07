@@ -1,7 +1,6 @@
 from tkinter import *
 from random import randint
 
-
 class startup():
   """Open GUI window with 3 options.
 
@@ -23,6 +22,9 @@ class startup():
       self.window.title("What to play")
       self.window.geometry("300x150")
 
+      def randomButton():
+        print(randint(1,3))
+    
       self.b1 = Button(
           self.window,
           text="option 1",
@@ -43,6 +45,11 @@ class startup():
           command=lambda: [self.selectionThree(),
                            self.window.destroy()])
       self.b3.pack()
+
+      self.b4 = Button(self.window, text = 'RANDOM', command=randomButton)
+      self.b4.pack(side = BOTTOM)
+
+
 
   def selectionOne(self):
       """Store variable selected as 1.
@@ -105,7 +112,7 @@ class allGames():
                             text="RANDOMIZE",
                             command=lambda: randomizer(self))
     self.randomize.pack()
-
+    
 class currentGames():
   game_lst = ["VALORANT", "TEAMFIGHT TACTICS", "LOL ARAM", "LOL SPECIALMODE","STARCRAFT2", "NEW GAME","Card Hunter", "more coding c:"]
   length = len(game_lst)
@@ -203,15 +210,11 @@ class customized():
 if __name__ == '__main__':
   start = startup()
   selection = start.selected
-  print(selection)
+
 
   if selection == 1:
-      allGameWindow = allGames()
+    allGameWindow = allGames()
   if selection == 2:
-      currentGameWindow = currentGames()
+    current = currentGames()
   if selection == 3:
-      customizedWindow = customized()
-    
-
-
-# To get a random integer from x to y -> randint(x, y)   *note* x and y will be included in the range
+    customizedWindow = customized()
